@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Swashbuckle.AspNetCore.Swagger;
 
-namespace ActionResultTDemo
+namespace HttpClientFactoryDemo
 {
     public class Startup
     {
@@ -12,15 +12,7 @@ namespace ActionResultTDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
-            services.AddSwaggerGen(options =>
-            {
-                options.SwaggerDoc("v1", new Info
-                {
-                    Title = "ActionResult<T> Demo",
-                    Description = "ActionResult<T> Demo",
-                });
-            });
+            services.AddHttpClient();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -30,12 +22,6 @@ namespace ActionResultTDemo
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            app.UseSwagger();
-            app.UseSwaggerUI(options =>
-            {
-                options.SwaggerEndpoint("/swagger/v1/swagger.json", "ActionResultTDemo");
-            });
 
             app.UseMvc();
         }
