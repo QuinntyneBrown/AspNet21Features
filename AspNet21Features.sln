@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularSPATemplate", "src\A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HttpClientFactoryDemo", "src\HttpClientFactory\HttpClientFactoryDemo.csproj", "{EA7D79FD-F299-437F-B5FA-1F10BF10D0BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalR", "src\SignalR\SignalR.csproj", "{72F81CF0-B585-4524-AA97-9B60CDE3FE2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SignalRDemo", "src\SignalR\SignalRDemo.csproj", "{72F81CF0-B585-4524-AA97-9B60CDE3FE2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

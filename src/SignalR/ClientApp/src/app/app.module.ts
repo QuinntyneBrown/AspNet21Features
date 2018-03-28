@@ -5,7 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home.component';
+import { SignalRDemoHubClient } from './signalr-demo-hub-client';
+import { SignalRDemoHubClientGuard } from './signalr-demo-hub-client.guard';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,18 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' }
+      {
+        path: '',
+        component: HomeComponent,
+        pathMatch: 'full',
+        canActivate:[SignalRDemoHubClientGuard]
+      }
     ])
   ],
-  providers: [],
+  providers: [
+    SignalRDemoHubClient,
+    SignalRDemoHubClientGuard
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
